@@ -1,0 +1,43 @@
+#
+# Copyright © 2021 Bedag Informatik AG
+
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+name: "image-build-action"
+author: "bedag"
+description: "This action uses bedag/image-build to parse Dockerfiles and publish it on a docker registry."
+branding:
+  icon: "triangle"
+  color: "green"
+inputs:
+  file:
+    description: "Image-build file (-f)"
+    required: false
+  input:
+    description: "List of image-build inputs (-s)"
+    required: false
+  debug:
+    description: "Debug output"
+    required: false
+  docker_registry:
+    description: "Docker regsitry"
+    required: false
+  docker_username:
+    description: "Docker user"
+    required: false
+  docker_password:
+    description: "Docker password/token"
+    required: false
+runs:
+  using: 'docker'
+  image: Dockerfile
