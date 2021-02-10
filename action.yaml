@@ -26,6 +26,9 @@ inputs:
   input:
     description: "List of image-build inputs (-s)"
     required: false
+  push:
+    description: "True/False Push to docker registry"
+    required: false
   debug:
     description: "Debug output"
     required: false
