@@ -28,6 +28,7 @@ RUN apk add --no-cache git docker && \
 
 RUN git clone ${IMAGE_BUILD} /build && \
     pip install --upgrade pip && \
+    pip install six \
     pip install -r  requirements.txt
 
 RUN cp /build/docker-build.py /usr/local/bin/docker-build.py \
