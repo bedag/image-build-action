@@ -29,6 +29,8 @@ RUN apk add --no-cache git docker && \
 RUN git clone ${IMAGE_BUILD} /build && \
     pip install --upgrade pip && \
     pip install six \
+    echo "fixing pyaml breaking change in pyaml"
+    sed -e 's/pyyaml/pyyaml==5.4.1/g' -i requirements.txt
     pip install -r  requirements.txt
 
 RUN cp /build/docker-build.py /usr/local/bin/docker-build.py \
